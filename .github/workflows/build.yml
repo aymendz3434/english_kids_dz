@@ -10,6 +10,8 @@ jobs:
       - uses: subosito/flutter-action@v2
         with:
           channel: stable
+      - name: Create android folder
+        run: flutter create . --org dz.english --project-name english_kids_dz
       - run: flutter pub get
       - run: flutter build apk --release
       - uses: actions/upload-artifact@v4
